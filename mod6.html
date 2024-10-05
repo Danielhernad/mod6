@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+   
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+
+<meta charset="UTF-8">
+<title>audio message</title>
+<link rel="stylesheet" href="main.css">
+
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgiveness Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+    <canvas id="myCanvas" width="4000" height="0"></canvas>
+
+   
+
+
+
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="audio-player"></div>
+        <audio id="audio" src="audio_sample.mp3" preload="metadata"></audio>
+        <div class="controls">
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <input type="range" id="seekBar" value="0" />
+        </div>
+
+    <div class="content">
+        <h1>Welcome to ypur Journey to forgiveness</h1>
+        <p> .</p>
+    </div>
+
+   <script>// Draw a triangle on the canvas
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Set fill color and draw triangle
+    ctx.fillStyle = '#FF0000'; // Red color
+    ctx.beginPath();
+    ctx.moveTo(200, 50); // Top point
+    ctx.lineTo(150, 200); // Bottom left point
+    ctx.lineTo(250, 200); // Bottom right point
+    ctx.closePath();
+    ctx.fill();</script> 
+
+
+
+    <div class="container">
+        <h1>Forgiveness Form</h1>
+        <form id="forgivenessForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="message">please explain your situation and struggle with forgiveness:</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="messages">
+            <h2>Reminder:</h2>
+            <ul id="messageList"></ul>
+
+
+
+    <div id="container">
+<header><h1>forgiveness is for you not them  </h1></header>
+<nav></nav>
+<section>
+</section>
+<footer>copyright daniel hernandez 2024</footer>
+    
+
+</div>
+    <script src="script.js"></script>
+    <script>document.getElementById('forgivenessForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+    
+        // Create a new list item for the message
+        const li = document.createElement('li');
+        li.textContent = `${name} says: ${message}`;
+    
+        // Append the new message to the message list
+        document.getElementById('messageList').appendChild(li);
+    
+        // Clear the input fields
+        document.getElementById('forgivenessForm').reset();
+    });</script>
+
+
+
+
+<script>
+    const audio = document.getElementById('audio');
+const playButton = document.getElementById('play');
+const pauseButton = document.getElementById('pause');
+const seekBar = document.getElementById('seekBar');
+
+// Play audio
+playButton.addEventListener('click', () => {
+    audio.play();
+});
+
+// Pause audio
+pauseButton.addEventListener('click', () => {
+    audio.pause();
+});
+
+// Update the seek bar as the audio plays
+audio.addEventListener('timeupdate', () => {
+    seekBar.value = (audio.currentTime / audio.duration) * 100;
+});
+
+// Seek audio when the seek bar is moved
+seekBar.addEventListener('input', () => {
+    audio.currentTime = (seekBar.value / 100) * audio.duration;
+});
+</script>
+</body>
+</html>
+
